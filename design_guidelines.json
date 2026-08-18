@@ -1,0 +1,129 @@
+{
+  "theme": "Light mode default, dark mode toggle. Healthcare apps perform best in light, high-contrast modes for legibility, especially for older adults.",
+  "colors": {
+    "archetype": "Organic & Earthy (Modified for Medical Clarity)",
+    "background": {
+      "default": "#FAFAFA",
+      "card": "#FFFFFF",
+      "accent_surface": "#F0F5F2"
+    },
+    "text": {
+      "primary": "#13261C",
+      "secondary": "#4A6356",
+      "muted": "#7C988A"
+    },
+    "primary": {
+      "default": "#2D6A4F",
+      "hover": "#1B4332",
+      "foreground": "#FFFFFF"
+    },
+    "status": {
+      "success": "#27AE60",
+      "warning": "#F2994A",
+      "critical": "#EB5757",
+      "info": "#2F80ED"
+    },
+    "kdigo_heatmap": {
+      "low": "#A8D5BA",
+      "moderate": "#FCE38A",
+      "high": "#F38181",
+      "very_high": "#C73866"
+    }
+  },
+  "typography": {
+    "headings": "Manrope",
+    "body": "IBM Plex Sans",
+    "rules": [
+      "Use tracking-tight for H1/H2.",
+      "Use IBM Plex Sans for all lab data and numbers to ensure monospaced-like alignment.",
+      "Never use Inter for headings."
+    ],
+    "scale": {
+      "h1": "text-3xl sm:text-4xl font-bold tracking-tight text-primary-text",
+      "h2": "text-2xl sm:text-3xl font-semibold tracking-tight",
+      "h3": "text-xl font-medium",
+      "body_large": "text-lg",
+      "body": "text-base",
+      "small": "text-sm",
+      "micro_label": "text-xs font-bold uppercase tracking-[0.1em]"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": "Minimal. Use shadow-sm for cards. shadow-lg only for floating bottom nav or modals.",
+    "borders": "1px border-border/40 on cards. Use soft rounded corners (rounded-2xl) to feel like a companion rather than a sterile clinical tool.",
+    "glassmorphism": "Forbidden for medical data. Use only for sticky headers/bottom nav if content scrolls under, but ensure high opacity (e.g., bg-white/90 backdrop-blur-md) so text doesn't become illegible."
+  },
+  "components": {
+    "bottom_navigation": "Fixed bottom, solid white background (not transparent), z-50. Phosphor Icons (size 24). Active state uses Deep Forest Green with a subtle background pill.",
+    "cards": "Cardless or minimal outline cards. p-4 or p-6. No heavy drop shadows.",
+    "buttons": "Pill-shaped (rounded-full) for primary actions to feel approachable. Min height 48px for tap targets.",
+    "charts": "Recharts. Use simple Area or Line charts for eGFR/Creatinine. Ensure dots on data points are large (r=4 or 6) for easy tapping/reading."
+  },
+  "layouts": {
+    "mobile_first": "Max-w-md mx-auto for mobile layout if viewed on desktop. True mobile-first approach. Safe area padding at bottom for nav.",
+    "dashboard": "Bento-lite grid. 1 column on mobile, 2 on tablet. Generous spacing (gap-4 or gap-6).",
+    "check_in": "Step-by-step full-screen wizard. One question per screen. Large touch targets."
+  },
+  "motion": {
+    "page_transitions": "Subtle fade-in and slide-up (y: 10).",
+    "micro_interactions": "Tap scale (scale: 0.98) on cards and buttons.",
+    "check_in_wizard": "Framer motion AnimatePresence slide left/right between questions."
+  },
+  "accessibility": {
+    "tap_targets": "Minimum 48x48px for all interactive elements.",
+    "contrast": "APCA/WCAG AA compliant. All text over primary green must be white.",
+    "color_independence": "Status indicators (like KDIGO risk) must include an icon or text label (e.g. 'High Risk [!]'), not just color.",
+    "data_testid": "Required on all interactive elements (e.g., data-testid='log-symptom-button')."
+  },
+  "media": {
+    "icons": "@phosphor-icons/react (Duotone for decorative, Regular/Fill for nav).",
+    "image_urls": {
+      "onboarding_senior": {
+        "url": "https://images.pexels.com/photos/8900045/pexels-photo-8900045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Elderly man happily holding a bowl of fresh vegetables indoors, promoting healthy lifestyle.",
+        "category": "onboarding_hero"
+      },
+      "onboarding_senior_woman": {
+        "url": "https://images.pexels.com/photos/36792488/pexels-photo-36792488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Radiant senior woman smiling outdoors in a vibrant green outfit.",
+        "category": "onboarding_secondary"
+      },
+      "healthy_food": {
+        "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwb3JnYW5pYyUyMGZvb2QlMjBib3dsfGVufDB8fHx8MTc4NzAzNzEzMHww&ixlib=rb-4.1.0&q=85",
+        "description": "Bowl of vegetable salads.",
+        "category": "check_in_diet"
+      },
+      "doctor_consult": {
+        "url": "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "A doctor and patient engaging in a positive consultation in a bright clinic setting.",
+        "category": "reports_summary"
+      }
+    }
+  },
+  "libraries": {
+    "charts": "recharts",
+    "motion": "framer-motion",
+    "icons": "@phosphor-icons/react",
+    "toast": "sonner"
+  },
+  "instructions_to_main_agent": [
+    "Build a mobile-first web app with a fixed bottom navigation bar containing: Home, Check-in, Reports, Insights, Timeline, Profile.",
+    "Use Manrope for headings and IBM Plex Sans for body text and numbers.",
+    "Ensure all tap targets (buttons, list items) are at least 48px tall.",
+    "Implement the Dashboard with greeting, today's check-in card, latest measurements grid (eGFR, Creatinine), and Reminders.",
+    "The Daily Check-in should be a fast <60s flow, potentially a wizard or a very clean single page.",
+    "Insights page must include Recharts line charts for eGFR/Creatinine and a KDIGO GFRxACR educational heatmap.",
+    "Timeline page should be a chronological list of events (reports, doctor visits, medication changes).",
+    "Vrikka AI Chat can be a floating FAB or accessible from the nav.",
+    "Avoid generic 'AI slop' gradients or heavy glassmorphism. Use solid, soft earthy tones with crisp borders to build medical trust.",
+    "Apply guidelines to .js files, not .tsx files. You have a React JS template, write standard JSX."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "You MUST NOT apply universal transition (e.g., transition: all). Add transitions for specific interactive elements only.",
+    "You MUST NOT center align the app container in CSS. Let text naturally flow left-aligned.",
+    "Every interaction needs micro-animations - hover states, transitions, entrance animations.",
+    "Never use generic placeholder images or AI assistant emojis for icons.",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}
